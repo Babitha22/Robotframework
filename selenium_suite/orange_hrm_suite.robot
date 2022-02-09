@@ -15,7 +15,7 @@ TC1 Valid Login
     Sleep    5s
     Click Element    link=Logout
     Close Browser
-    
+# Adding contact
 TC2 Add Emergency Contact
     Append To Environment Variable      Path    ${EXECDIR}\\drivers
     Open Browser    url=https://opensource-demo.orangehrmlive.com/       browser=edge
