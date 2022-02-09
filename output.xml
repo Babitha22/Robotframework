@@ -1,208 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220208 22:42:02.494" rpa="false" schemaversion="2">
-<suite id="s1" name="Demo1 Suite" source="C:\Users\Babitha\Desktop\robot_framework\robot_project\demo1_suite.robot">
-<test id="s1-t1" name="TC1 Print Name">
-<kw name="Log To Console" library="BuiltIn">
-<arg>hello, everyone</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.610" endtime="20220208 22:42:02.611"/>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220209 17:17:38.485" rpa="false" schemaversion="2">
+<suite id="s1" name="Dbfree Suite" source="C:\Users\Babitha\Desktop\robot_framework\robot_project\selenium_suite\dbfree_suite.robot">
+<test id="s1-t1" name="TC2 Multiple Tab">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=edge</arg>
+<arg>executable_path=${EXECDIR}\\drivers\\msedgedriver</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220209 17:17:38.866" level="INFO">Opening browser 'edge' to base url 'None'.</msg>
+<status status="PASS" starttime="20220209 17:17:38.866" endtime="20220209 17:17:44.107"/>
 </kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>welcome</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.611" endtime="20220208 22:42:02.614"/>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20220209 17:17:44.108" endtime="20220209 17:17:44.243"/>
 </kw>
-<status status="PASS" starttime="20220208 22:42:02.608" endtime="20220208 22:42:02.614"/>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="PASS" starttime="20220209 17:17:44.244" endtime="20220209 17:17:44.246"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=https://www.db4free.net/</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220209 17:17:44.246" level="INFO">Opening url 'https://www.db4free.net/'</msg>
+<status status="PASS" starttime="20220209 17:17:44.246" endtime="20220209 17:17:46.694"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>xpath=//b[contains(text(),'php')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:46.696" level="INFO">Clicking element 'xpath=//b[contains(text(),'php')]'.</msg>
+<status status="PASS" starttime="20220209 17:17:46.695" endtime="20220209 17:17:46.856"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>NEW</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220209 17:17:46.859" endtime="20220209 17:17:46.881"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=input_username</arg>
+<arg>dbfree</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:46.885" level="INFO">Typing text 'dbfree' into text field 'id=input_username'.</msg>
+<status status="PASS" starttime="20220209 17:17:46.884" endtime="20220209 17:17:49.728"/>
+</kw>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=input_password</arg>
+<arg>test123</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:49.729" level="INFO">Typing password into text field 'id=input_password'.</msg>
+<msg timestamp="20220209 17:17:49.799" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220209 17:17:49.884" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220209 17:17:49.729" endtime="20220209 17:17:49.884"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>id=input_go</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:49.885" level="INFO">Clicking element 'id=input_go'.</msg>
+<status status="PASS" starttime="20220209 17:17:49.885" endtime="20220209 17:17:50.799"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<status status="PASS" starttime="20220209 17:17:50.801" endtime="20220209 17:17:50.842"/>
+</kw>
+<kw name="Switch Window" library="SeleniumLibrary">
+<arg>MAIN</arg>
+<doc>Switches to browser window matching ``locator``.</doc>
+<status status="PASS" starttime="20220209 17:17:50.844" endtime="20220209 17:17:50.859"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>link=Donations</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:50.860" level="INFO">Clicking element 'link=Donations'.</msg>
+<status status="PASS" starttime="20220209 17:17:50.859" endtime="20220209 17:17:51.385"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=form_amount</arg>
+<arg>-90</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:51.385" level="INFO">Typing text '-90' into text field 'id=form_amount'.</msg>
+<status status="PASS" starttime="20220209 17:17:51.385" endtime="20220209 17:17:51.511"/>
+</kw>
+<kw name="Select From List By Label" library="SeleniumLibrary">
+<arg>id=form_currency</arg>
+<arg>JPY</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<msg timestamp="20220209 17:17:51.512" level="INFO">Selecting options from selection list 'id=form_currency' by label JPY.</msg>
+<status status="PASS" starttime="20220209 17:17:51.512" endtime="20220209 17:17:51.607"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>name=submit</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220209 17:17:51.609" level="INFO">Clicking element 'name=submit'.</msg>
+<status status="PASS" starttime="20220209 17:17:51.609" endtime="20220209 17:17:55.799"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220209 17:17:55.799" endtime="20220209 17:17:58.059"/>
+</kw>
+<status status="PASS" starttime="20220209 17:17:38.865" endtime="20220209 17:17:58.061"/>
 </test>
-<test id="s1-t2" name="TC2 Print Date">
-<kw name="Get Current Date" library="DateTime">
-<var>${date}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220208 22:42:02.618" level="INFO">${date} = 2022-02-08 22:42:02.618</msg>
-<status status="PASS" starttime="20220208 22:42:02.618" endtime="20220208 22:42:02.618"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${date}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.618" endtime="20220208 22:42:02.623"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.617" endtime="20220208 22:42:02.624"/>
-</test>
-<test id="s1-t3" name="TC3 Store Data">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${name}</arg>
-<arg>babitha</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<msg timestamp="20220208 22:42:02.628" level="INFO">${name} = babitha</msg>
-<status status="PASS" starttime="20220208 22:42:02.627" endtime="20220208 22:42:02.628"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${name}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.631" endtime="20220208 22:42:02.632"/>
-</kw>
-<kw name="Log" library="BuiltIn">
-<arg>hello,${name}</arg>
-<doc>Logs the given message with the given level.</doc>
-<msg timestamp="20220208 22:42:02.633" level="INFO">hello,babitha</msg>
-<status status="PASS" starttime="20220208 22:42:02.633" endtime="20220208 22:42:02.633"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<var>${title}</var>
-<arg>robotframeworksession</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220208 22:42:02.635" level="INFO">${title} = robotframeworksession</msg>
-<status status="PASS" starttime="20220208 22:42:02.635" endtime="20220208 22:42:02.635"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${title}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.636" endtime="20220208 22:42:02.637"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.626" endtime="20220208 22:42:02.637"/>
-</test>
-<test id="s1-t4" name="TC4 Add Number">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${num1}</arg>
-<arg>90</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<msg timestamp="20220208 22:42:02.645" level="INFO">${num1} = 90</msg>
-<status status="PASS" starttime="20220208 22:42:02.641" endtime="20220208 22:42:02.646"/>
-</kw>
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${num2}</arg>
-<arg>80</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<msg timestamp="20220208 22:42:02.650" level="INFO">${num2} = 80</msg>
-<status status="PASS" starttime="20220208 22:42:02.646" endtime="20220208 22:42:02.650"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${res}</var>
-<arg>${num1}+${num2}</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<msg timestamp="20220208 22:42:02.651" level="INFO">${res} = 170</msg>
-<status status="PASS" starttime="20220208 22:42:02.650" endtime="20220208 22:42:02.651"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${res}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.652" endtime="20220208 22:42:02.653"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.639" endtime="20220208 22:42:02.653"/>
-</test>
-<test id="s1-t5" name="Tc5 Area of Circle">
-<kw name="Set Variable" library="BuiltIn">
-<arg>${ra}</arg>
-<arg>2</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<msg timestamp="20220208 22:42:02.661" level="FAIL">Variable '${ra}' not found.</msg>
-<status status="FAIL" starttime="20220208 22:42:02.656" endtime="20220208 22:42:02.661"/>
-</kw>
-<kw name="Set Variable" library="BuiltIn">
-<arg>${pi}</arg>
-<arg>3.14</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="NOT RUN" starttime="20220208 22:42:02.663" endtime="20220208 22:42:02.664"/>
-</kw>
-<kw name="Evaluate" library="BuiltIn">
-<var>${a}</var>
-<arg>${ra}*${ra}*3.14</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="NOT RUN" starttime="20220208 22:42:02.664" endtime="20220208 22:42:02.664"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${a}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220208 22:42:02.665" endtime="20220208 22:42:02.665"/>
-</kw>
-<status status="FAIL" starttime="20220208 22:42:02.656" endtime="20220208 22:42:02.666">Variable '${ra}' not found.</status>
-</test>
-<test id="s1-t6" name="TC6 IF Condition">
-<kw name="Set Local Variable" library="BuiltIn">
-<arg>${browser}</arg>
-<arg>chrome</arg>
-<doc>Makes a variable available everywhere within the local scope.</doc>
-<msg timestamp="20220208 22:42:02.672" level="INFO">${browser} = chrome</msg>
-<status status="PASS" starttime="20220208 22:42:02.671" endtime="20220208 22:42:02.672"/>
-</kw>
-<if>
-<branch type="IF" condition="'${browser}'=='chrome'">
-<kw name="Log To Console" library="BuiltIn">
-<arg>Yes! it's chrome</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.674" endtime="20220208 22:42:02.675"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.673" endtime="20220208 22:42:02.675"/>
-</branch>
-<branch type="ELSE">
-<kw name="Log To Console" library="BuiltIn">
-<arg>No! it's not chrome</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220208 22:42:02.675" endtime="20220208 22:42:02.675"/>
-</kw>
-<status status="NOT RUN" starttime="20220208 22:42:02.675" endtime="20220208 22:42:02.676"/>
-</branch>
-<status status="PASS" starttime="20220208 22:42:02.673" endtime="20220208 22:42:02.676"/>
-</if>
-<status status="PASS" starttime="20220208 22:42:02.669" endtime="20220208 22:42:02.677"/>
-</test>
-<test id="s1-t7" name="TC7 For loop">
-<for flavor="IN">
-<var>${i}</var>
-<value>RANGE</value>
-<value>1</value>
-<value>11</value>
-<value>1</value>
-<iter>
-<var name="${i}">RANGE</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.682" endtime="20220208 22:42:02.684"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.681" endtime="20220208 22:42:02.684"/>
-</iter>
-<iter>
-<var name="${i}">1</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.684" endtime="20220208 22:42:02.685"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.684" endtime="20220208 22:42:02.685"/>
-</iter>
-<iter>
-<var name="${i}">11</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.685" endtime="20220208 22:42:02.687"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.685" endtime="20220208 22:42:02.687"/>
-</iter>
-<iter>
-<var name="${i}">1</var>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${i}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20220208 22:42:02.687" endtime="20220208 22:42:02.688"/>
-</kw>
-<status status="PASS" starttime="20220208 22:42:02.687" endtime="20220208 22:42:02.688"/>
-</iter>
-<status status="PASS" starttime="20220208 22:42:02.681" endtime="20220208 22:42:02.688"/>
-</for>
-<status status="PASS" starttime="20220208 22:42:02.680" endtime="20220208 22:42:02.689"/>
-</test>
-<status status="FAIL" starttime="20220208 22:42:02.501" endtime="20220208 22:42:02.691"/>
+<status status="PASS" starttime="20220209 17:17:38.488" endtime="20220209 17:17:58.067"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="1" skip="0" id="s1" name="Demo1 Suite">Demo1 Suite</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dbfree Suite">Dbfree Suite</stat>
 </suite>
 </statistics>
 <errors>
