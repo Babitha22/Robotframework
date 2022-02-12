@@ -1,15 +1,32 @@
-*** Comments ***
-    Launch the web site https://phptravels.net/
-    Choose INR
-    Goto Flights
-    Select Business
-    Choose "FROM" location as "Los Angeles" (LAX)
-    Choose "TO" as "Dallas" (DAL)
-    Set the travel date “30-03-2022”
-    Adult as 4
-    Child as 2
-    Get the first flight details and print
-    LAX  DAL
-    Dates ( 30-03-2022 )
-    Adults 4 Childs 2 Infants 0
-    Close the browser
+*** Settings ***
+Library     SeleniumLibrary
+Library     AutoRecorder    node=suite,test
+
+*** Test Cases ***
+TC1 PHP Travel
+    Open Browser    browser=edge      executable_path=${EXECDIR}${/}drivers${/}msedgedriver.exe
+    Maximize Browser Window
+    Set Selenium Implicit Wait    30s
+    Set Selenium Speed    1s
+    Go To    url=https://phptravels.net/
+    Click Element    xpath=//a[text()='flights']
+
+    Input Text    id=autocomplete    lax
+    Press Keys      None        ARROW_DOWN
+    Press Keys      None        RETURN
+
+    Input Text    id=autocomplete2    dal
+    Press Keys      None        ARROW_DOWN
+    Press Keys      None        RETURN
+
+    Input Text    id=departure    30-03-2022
+
+    Click Element    xpath=//i[@class='la la-user form-icon']
+
+    Click Element    xpath=//i[@class='la la-plus']
+    Click Element    xpath=//i[@class='la la-plus']
+    Click Element    xpath=//i[@class='la la-plus']
+
+    Click Element    xpath=(//i[@class='la la-plus'])[2]
+    Click Element    xpath=(//i[@class='la la-plus'])[2]
+    [Teardown]     Close Browser
