@@ -1,9 +1,12 @@
 *** Settings ***
 Library   DateTime
+Force Tags      f1      f2
+Default Tags        d1
 
 
 *** Test Cases ***
 TC1 Print Name
+    [Tags]  high
     Log To Console    hello, everyone
     Log To Console    welcome
 
@@ -12,6 +15,7 @@ TC2 Print Date
     Log To Console    ${date}
 
 TC3 Store Data
+     [Tags]      high
      Set Local Variable      ${name}     babitha
      Log To Console      ${name}
      Log     hello,${name}
@@ -28,12 +32,11 @@ TC4 Add Number
 
     Log To Console    ${res}
 
-Tc5 Area of Circle
-    Set Variable    ${ra}   2
-    Set Variable    ${pi}   3.14
-
-    ${a}    Evaluate    ${ra}*${ra}*3.14
-    Log To Console    ${a}
+TC5 Area of Circle
+    [Tags]      high
+    Set Local Variable    ${radius}     10
+    ${res}  Evaluate    3.14*${radius}*${radius}
+    Log To Console    ${res}
 
 TC6 IF Condition
     Set Local Variable     ${browser}      chrome
